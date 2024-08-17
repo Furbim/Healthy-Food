@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body>
+    <header class="bg-[#D9D9D9] flex h-[10vh] px-12">
+        <div class="w-[33%] h-[100%] flex items-center">
+            <img src="../imagens/Logo.PNG" class="h-[80%] " alt="">
+        </div>
+        <div class="w-[33%] h-[100%] flex justify-center items-center">
+            <div class="flex bg-white h-[4vh] items-center w-[90%] px-4 rounded-3xl border-[#1B4001] border">
+                <input type="text" placeholder="Search" class="w-[95%] outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                    <path fill="#1B4001"
+                        d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" />
+                </svg>
+
+            </div>
+        </div>
+        <div class="w-[33%] h-[100%] flex pl-24 justify-evenly items-center ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 24 24">
+                <g fill="none" stroke="#1B4001" stroke-width="2">
+                    <rect width="14" height="17" x="5" y="4" rx="2" />
+                    <path stroke-linecap="round" d="M9 9h6m-6 4h6m-6 4h4" />
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="btn_carrinho" width="2.5em" height="2.5em" viewBox="0 0 50 50">
+                <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                <path fill="#1B4001"
+                    d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 24 24">
+                <path fill="#1B4001"
+                    d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
+            </svg>
+
+        </div>
+
+    </header>
+
+    <div id="carrinho"
+        class="hidden w-[100%] escuro h[100vh] fixed top-0 left-0 ease-in-out justify-center items-center z-50">
+        <div
+            class="flex flex-col justify-start items-center fixed rounded-3xl top-[15%] left-[30%] z-50 bg-gray-200 w-[40%] h-[70vh]">
+            <div class="flex justify-end items-center w-[100%] h-[10%] px-10">
+                <div id="btn_fechar"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="flex flex-col items-center justify-center h-[90%]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 24 24">
+                    <path fill="#ff0000" fill-rule="evenodd"
+                        d="M3.04 2.292a.75.75 0 0 0-.497 1.416l.261.091c.668.235 1.107.39 1.43.549c.303.149.436.27.524.398c.09.132.16.314.2.677c.04.38.042.875.042 1.615V9.64c0 2.942.063 3.912.93 4.826c.866.914 2.26.914 5.05.914h5.302c1.561 0 2.342 0 2.893-.45c.552-.45.71-1.214 1.025-2.742l.5-2.425c.347-1.74.52-2.609.076-3.186S18.816 6 17.131 6H6.492a9 9 0 0 0-.043-.738c-.054-.497-.17-.95-.452-1.362c-.284-.416-.662-.682-1.103-.899c-.412-.202-.936-.386-1.552-.603zm7.93 6.678a.75.75 0 0 1 1.06 0l.97.97l.97-.97a.75.75 0 1 1 1.06 1.06l-.97.97l.97.97a.75.75 0 1 1-1.06 1.06l-.97-.97l-.97.97a.75.75 0 1 1-1.06-1.06l.97-.97l-.97-.97a.75.75 0 0 1 0-1.06"
+                        clip-rule="evenodd" />
+                    <path fill="#ff0000"
+                        d="M7.5 18a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3m9 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3" />
+                </svg>
+                <p class="text-[#1B4001] text-2xl font-bold mt-5 ">O seu carrinho está vazio!</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-[5vh] border-y-black border"></div>
+    <nav class="h-[6vh] bg-[#558C03] flex justify-evenly items-center px-40">
+        <a href="index.html"
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Início</a>
+        <a href="legumes.html"
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Legumes</a>
+        <a href=""
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Cereais</a>
+        <a href=""
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Laticínios</a>
+        <a href=""
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Verduras</a>
+        <a href="" class="decoration-none text-[24px] text-white font-semibold w-[16%] text-center"> Saladas</a>
+    </nav>
+
+    <div class="h-[20vh] border-y-black border flex justify-center items-center"><h1 class="text-7xl text-[#1B4001] font-bold">Frutas</h1></div>
+    <div class="flex items-center flex-col  bg-[#D9D9D9]">
+        <div class=" flex flex-wrap gap-y-16 justify-around gap-x-16 my-10 w-[80%] pt-12 pb-16 px-16 bg-white rounded-2xl">
+            <div class="w-[100%]">
+                <h1 class="text-[#1B4001] text-2xl font-bold mb-4">Populares</h1>
+            </div>
+            
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/laranja.png" alt="">
+                <p class="max-w-48">Laranja Pêra Rio - Unidade (Aprox. 180 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold ">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/banana.png" alt="">
+                <p class="max-w-48">Banana Prata - Unidade (Aprox. 120 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/cenoura.png" alt="">
+                <p class="max-w-52">Cenoura Vermelha - Unidade (Aprox. 100 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,52</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/abobora.png" alt="">
+                <p class="max-w-48">Abóbora Moranga - 1/4 Unidade</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 4,49</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+        </div>
+        <div class=" flex flex-wrap gap-y-16 justify-around gap-x-16 my-10 w-[80%] pt-10 pb-16 px-16 bg-white rounded-2xl">
+            <div class="w-[100%]">
+                <h1 class="text-[#1B4001] text-2xl font-bold mb-4">Melhores Preços</h1>
+            </div>
+            
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/laranja.png" alt="">
+                <p class="max-w-48">Laranja Pêra Rio - Unidade (Aprox. 180 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/banana.png" alt="">
+                <p class="max-w-48">Banana Prata - Unidade (Aprox. 120 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/cenoura.png" alt="">
+                <p class="max-w-52">Cenoura Vermelha - Unidade (Aprox. 100 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,52</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/abobora.png" alt="">
+                <p class="max-w-48">Abóbora Moranga - 1/4 Unidade</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 4,49</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+        </div>
+        <div class=" flex flex-wrap gap-y-16 justify-around gap-x-16 mt-10 mb-20 w-[80%] pt-12 pb-16 px-16 bg-white rounded-2xl">
+            <div class="w-[100%]">
+                <h1 class="text-[#1B4001] text-2xl font-bold mb-4">Suculentas</h1>
+            </div>
+            
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/laranja.png" alt="">
+                <p class="max-w-48">Laranja Pêra Rio - Unidade (Aprox. 180 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/banana.png" alt="">
+                <p class="max-w-48">Banana Prata - Unidade (Aprox. 120 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/cenoura.png" alt="">
+                <p class="max-w-52">Cenoura Vermelha - Unidade (Aprox. 100 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,52</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/abobora.png" alt="">
+                <p class="max-w-48">Abóbora Moranga - 1/4 Unidade</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 4,49</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="bg-[#593C32] flex h-[17vh] pt-4">
+        <div class="w-[33%] h-[100%] flex flex-col items-center justify-around">
+            <img src="../imagens/logo_footer.png" class="h-[60%] " alt="">
+            <a class="text-white" href="">Termos e Políticas de Condições</a>
+        </div>
+        <div class="w-[33%] h-[100%] py-5 flex flex-col justify-around items-center ">
+            <p class="text-white text-sm font-semibold">Colégio Cotemig BARROCA</p>
+            <p class="text-white text-sm">Rua Santa Cruz, 546 - Bairro Barroca
+            </p>
+            <p class="text-white text-sm"> Belo Horizonte - CEP 30431-228</p>
+        </div>
+        <div class="w-[33%] h-[100%] py-5 flex flex-col justify-around items-center ">
+            <p class="text-white text-sm font-semibold">Horários de atemdimento:</p>
+            <p class="text-white text-sm">De 8:00 ás 18:00 em dias úteis;
+            </p>
+            <p class="text-white text-sm">De 9:00 ás 13:00 aos sábados.</p>
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

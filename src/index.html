@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-[#D9D9D9] flex h-[10vh] px-12">
+        <div class="w-[33%] h-[100%] flex items-center">
+            <img src="../imagens/Logo.PNG" class="h-[80%] " alt="">
+        </div>
+        <div class="w-[33%] h-[100%] flex justify-center items-center">
+            <div class="flex bg-white h-[4vh] items-center w-[90%] px-4 rounded-3xl border-[#1B4001] border">
+                <input type="text" placeholder="Search" class="w-[95%] outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                    <path fill="#1B4001"
+                        d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14" />
+                </svg>
+
+            </div>
+        </div>
+        <div class="w-[33%] h-[100%] flex pl-24 justify-evenly items-center ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 24 24">
+                <g fill="none" stroke="#1B4001" stroke-width="2">
+                    <rect width="14" height="17" x="5" y="4" rx="2" />
+                    <path stroke-linecap="round" d="M9 9h6m-6 4h6m-6 4h4" />
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="btn_carrinho" width="2.5em" height="2.5em" viewBox="0 0 50 50">
+                <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                <path fill="#1B4001"
+                    d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="btn_login" width="2.5em" height="2.5em" viewBox="0 0 24 24">
+                <path fill="#1B4001"
+                    d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
+            </svg>
+
+        </div>
+
+    </header>
+
+    <div class="hidden login w-[100%] login h-[100vh] fixed backdrop-brightness-50 top-0 left-0 ease-in-out justify-center items-center z-50">
+
+        <div class="bg-[#1B4001] p-8 rounded-lg w- shadow-lg max-w-sm w-full ">
+            <div class="flex items-center justify-center bg-[#d9d9d9] py-5 mb-6">
+                <img src="../imagens/Logo.PNG" width="100px" alt="Logo" class="mr-3">
+            </div>
+            <div class="mb-6">
+                <button class="flex items-center justify-center bg-white text-black py-2 px-4 rounded-full w-full mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="mr-4"
+                        viewBox="0 0 48 48">
+                        <path fill="#ffc107"
+                            d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917" />
+                        <path fill="#ff3d00"
+                            d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691" />
+                        <path fill="#4caf50"
+                            d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.9 11.9 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44" />
+                        <path fill="#1976d2"
+                            d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917" />
+                    </svg>
+                    Sign Up with Google
+                </button>
+                <button class="flex items-center justify-center bg-white text-black py-2 px-4 rounded-full w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="mr-4"
+                        viewBox="0 0 256 256">
+                        <path fill="#1877f2"
+                            d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445" />
+                        <path fill="#fff"
+                            d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z" />
+                    </svg>
+                    Sign Up with Facebook
+                </button>
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-medium mb-1" for="login">Login:</label>
+                <input id="login" type="text" class="w-full p-2 rounded-lg border border-green-500">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-medium mb-1" for="senha">Senha:</label>
+                <input id="senha" type="password" class="w-full p-2 rounded-lg border border-green-500">
+            </div>
+            <div class="flex items-center mb-4">
+                <input id="termos" type="checkbox" class="mr-2">
+                <label for="termos" class="text-white">Concordo com os <a href="#" class="underline">Termos e
+                        Políticas</a> da empresa.</label>
+            </div>
+            <button class="w-full bg-green-600 text-white py-2 rounded-full hover:bg-green-700 transition">
+                Sign up
+            </button>
+            <a href="" id="btn_fechar_login">Voltar</a>
+        </div>
+    </div>
+    <div class="h-[5vh] border-y-black border"></div>
+    <nav class="h-[6vh] bg-[#558C03] flex justify-evenly items-center px-40">
+        <a href="frutas.html"
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Frutas</a>
+        <a href="legumes.html"
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Legumes</a>
+        <a href=""
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Cereais</a>
+        <a href=""
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Laticínios</a>
+        <a href=""
+            class="decoration-none text-[24px] text-white font-semibold border-r w-[16%] text-center border-white">
+            Verduras</a>
+        <a href="" class="decoration-none text-[24px] text-white font-semibold w-[16%] text-center"> Saladas</a>
+    </nav>
+
+    <div id="carrinho"
+        class="hidden w-[100%] escuro backdrop-brightness-50 h-[100vh] fixed top-0 left-0 ease-in-out justify-center items-center z-50">
+        <div
+            class="flex flex-col justify-start items-center fixed rounded-3xl top-[15%] left-[30%] z-50 bg-gray-200 w-[40%] h-[70vh]">
+            <div class="flex justify-end items-center w-[100%] h-[10%] px-10">
+                <div id="btn_fechar"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="flex flex-col items-center justify-center h-[90%]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 24 24">
+                    <path fill="#ff0000" fill-rule="evenodd"
+                        d="M3.04 2.292a.75.75 0 0 0-.497 1.416l.261.091c.668.235 1.107.39 1.43.549c.303.149.436.27.524.398c.09.132.16.314.2.677c.04.38.042.875.042 1.615V9.64c0 2.942.063 3.912.93 4.826c.866.914 2.26.914 5.05.914h5.302c1.561 0 2.342 0 2.893-.45c.552-.45.71-1.214 1.025-2.742l.5-2.425c.347-1.74.52-2.609.076-3.186S18.816 6 17.131 6H6.492a9 9 0 0 0-.043-.738c-.054-.497-.17-.95-.452-1.362c-.284-.416-.662-.682-1.103-.899c-.412-.202-.936-.386-1.552-.603zm7.93 6.678a.75.75 0 0 1 1.06 0l.97.97l.97-.97a.75.75 0 1 1 1.06 1.06l-.97.97l.97.97a.75.75 0 1 1-1.06 1.06l-.97-.97l-.97.97a.75.75 0 1 1-1.06-1.06l.97-.97l-.97-.97a.75.75 0 0 1 0-1.06"
+                        clip-rule="evenodd" />
+                    <path fill="#ff0000"
+                        d="M7.5 18a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3m9 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3" />
+                </svg>
+                <p class="text-[#1B4001] text-2xl font-bold mt-5 ">O seu carrinho está vazio!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="default-carousel" class="relative w-full mt-5" data-carousel="slide">
+
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+
+            <div class="block duration-700 ease-in-out" data-carousel-item>
+                <img src="../imagens/banner2.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../imagens/banner1.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+
+        </div>
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                data-carousel-slide-to="1"></button>
+
+        </div>
+        <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
+    <div class="flex flex-col border-y border-black mt-5 pb-10">
+        <div class="flex px-20 py-6">
+            <h1 class="text-[#1B4001] text-2xl font-bold mr-16">Lojas Próximas</h1>
+            <div class="w-[45%] rounded-xl px-6 bg-gray-300  flex items-center">Seu endereço
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-5" width="1.2em" height="1.3em" viewBox="0 0 24 24">
+                    <path fill="black"
+                        d="M18 18.5a1.5 1.5 0 0 1-1.5-1.5a1.5 1.5 0 0 1 1.5-1.5a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5m1.5-9l1.96 2.5H17V9.5m-11 9A1.5 1.5 0 0 1 4.5 17A1.5 1.5 0 0 1 6 15.5A1.5 1.5 0 0 1 7.5 17A1.5 1.5 0 0 1 6 18.5M20 8h-3V4H3c-1.11 0-2 .89-2 2v11h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h6a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2v-5z" />
+                </svg>
+                <div class="justify-end flex w-[77%]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                        <path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m7 10l5 5l5-5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-evenly px-20 mt-10">
+            <div class="flex flex-col items-center">
+                <img src="../imagens/ABC_Barão.png" class="rounded-[50%] w-32 h-32 " alt="">
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">ABC-Barão</h2>
+                <p class="text-[#1B4001] text-sm font-medium">500m</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="../imagens/ABC Plus.png" class="rounded-[50%] w-32 h-32 " alt="">
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">ABC Plus</h2>
+                <p class="text-[#1B4001] text-sm font-medium">1,3km</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="../imagens/+Sabor+Saúde.png" class="rounded-[50%] w-32 h-32 " alt="">
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">+Saúde +Sabor</h2>
+                <p class="text-[#1B4001] text-sm font-medium">2,2km</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="../imagens/ABasteCer1.png" class="rounded-[50%] w-32 h-32 " alt="">
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">ABasteCer</h2>
+                <p class="text-[#1B4001] text-sm font-medium">2,8km</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="../imagens/ABasteCer2.png" class="rounded-[50%] w-32 h-32 " alt="">
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">ABasteCer</h2>
+                <p class="text-[#1B4001] text-sm font-medium">2,8km</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="../imagens/ABC Mineiro.png" class="rounded-[50%] w-32 h-32 " alt="">
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">ABC-Mineiro</h2>
+                <p class="text-[#1B4001] text-sm font-medium">4,6km</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="flex justify-center  bg-[#D9D9D9]">
+        <div
+            class=" flex flex-wrap gap-y-16 justify-around gap-x-16 my-20 w-[60%] pt-10 pb-16 px-16 bg-white rounded-2xl">
+            <div class="w-[100%]">
+                <h1 class="text-[#1B4001] text-2xl font-bold mb-4">Produtos em destaque</h1>
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/laranja.png" alt="">
+                <p class="max-w-48">Laranja Pêra Rio - Unidade (Aprox. 180 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-10">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/banana.png" alt="">
+                <p class="max-w-48">Banana Prata - Unidade (Aprox. 120 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/cenoura.png" alt="">
+                <p class="max-w-52">Cenoura Vermelha - Unidade (Aprox. 100 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,52</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/abobora.png" alt="">
+                <p class="max-w-48">Abóbora Moranga - 1/4 Unidade</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 4,49</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/quiabo.png" alt="">
+                <p class="max-w-48">Quiabo - Bandeja <br><br>
+                </p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 3,99</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/tomatinho.png" alt="">
+                <p class="max-w-52">Tomate Sweet Grape Vermelho - Bandeja</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 6,79</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/queijominas.png" alt="">
+                <p class="max-w-48">Queijo Minas do Serro - Inteiro</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 23,92</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/ameixa.png" alt="">
+                <p class="max-w-52">Ameixa Nacional - Unidade (Aprox. 70 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,79</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/maçanacional.png" alt="">
+                <p class="max-w-52">Nectarina Nacional - Unidade (Aprox. 70 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 2,49</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48" src="../imagens/mexerica.png" alt="">
+                <p class="max-w-52">Mexerica Ponkan - Unidade (Aprox. 150 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,89</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/abacate.png" alt="">
+                <p class="max-w-48">Abacate - Unidade (Aprox. 400 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 4,24</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col h-[40vh] w-auto items-center ">
+                <img class="w-48 h-40" src="../imagens/maça.png" alt="">
+                <p class="max-w-52">Maçã Nacional Miúda - Unidade (Aprox. 80 Gramas)</p>
+                <h2 class="text-[#1B4001] text-lg font-bold mt-5">R$ 1,49</h2>
+                <div class="flex justify-between mt-7 w-48">
+                    <div class="flex w-[70%] border border-black rounded-lg"><button
+                            class="rounded-l-lg text-[#1B4001] text-xl bg-[#D9D9D9] border-r border-black font-extrabold w-[30%]">-</button><input
+                            class="text-center w-[40%] outline-none bg-transparent" type="text" value="0"><button
+                            class="rounded-r-lg text-[#1B4001] text-xl border-l border-black font-extrabold bg-[#D9D9D9] w-[30%]">+</button>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 50 50">
+                        <circle cx="44" cy="42" r="4" fill="#1B4001" />
+                        <circle cx="15" cy="42" r="4" fill="#1B4001" />
+                        <path fill="#1B4001"
+                            d="M47 33H15.771l.667-1.082c.286-.464.37-1.025.233-1.553l-.651-2.506l28.983-1.506C46.102 26.297 47 25.35 47 24.25V11c0-1.1-.9-2-2-2H11.119l-.391-1.503A2 2 0 0 0 8.792 6H2a2 2 0 0 0 0 4h5.246l5.34 20.545l-2.1 3.405a1.998 1.998 0 0 0-.043 2.024A1.997 1.997 0 0 0 12.188 37H47a2 2 0 0 0 0-4" />
+                    </svg>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center border-y border-black py-20">
+        <div class="w-[35%] pr-16">
+            <h1 class="text-[#1B4001] text-3xl font-bold mb-4">Sobre Nós</h1>
+            <p class="text-lg">Durante a pandemia de COVID-19, a Health Delivery surgiu como uma solução para
+                fornecer
+                alimentos frescos diretamente aos lares, enquanto apoiava agricultores locais. Fundada em 2020, a
+                empresa estabeleceu parcerias com produtores locais, oferecendo uma variedade de frutas e vegetais
+                por
+                meio de uma plataforma online. Além da conveniência, a Health priorizou práticas sustentáveis e se
+                tornou um símbolo de solidariedade em tempos difíceis. Seu sucesso exemplifica a resiliência humana
+                e a
+                importância de apoiar a produção agrícola local e sustentável.</p>
+        </div>
+        <div class="w-[35%] pl-16 pt-12">
+            <img src="/imagens/logosobre.png" class="w-[100%] " alt="">
+        </div>
+    </div>
+    <footer class="bg-[#593C32] flex h-[15vh] ">
+        <div class="w-[33%] h-[100%] flex flex-col items-center justify-around">
+            <img src="../imagens/logo_footer.png" class="h-[60%] " alt="">
+            <a class="text-white" href="">Termos e Políticas de Condições</a>
+        </div>
+        <div class="w-[33%] h-[100%] py-5 flex flex-col justify-around items-center ">
+            <p class="text-white text-sm font-semibold">Colégio Cotemig BARROCA</p>
+            <p class="text-white text-sm">Rua Santa Cruz, 546 - Bairro Barroca
+            </p>
+            <p class="text-white text-sm"> Belo Horizonte - CEP 30431-228</p>
+        </div>
+        <div class="w-[33%] h-[100%] py-5 flex flex-col justify-around items-center ">
+            <p class="text-white text-sm font-semibold">Horários de atemdimento:</p>
+            <p class="text-white text-sm">De 8:00 ás 18:00 em dias úteis;
+            </p>
+            <p class="text-white text-sm">De 9:00 ás 13:00 aos sábados.</p>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
